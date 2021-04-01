@@ -52,7 +52,7 @@ public class ExerciseGoal extends Goal {
 
     @Override
     public String getGoalData() {
-        return "\t" + getDaySet().format(DATE_FORMATTER) + "\t\t"
+        return SEPATATOR_TAB + SEPATATOR_TAB + getDaySet().format(DATE_FORMATTER) + SEPATATOR_TAB + SEPATATOR_TAB
                 + getPeriodType().toString().toLowerCase() + separatorBetweenTypeAndTarget
                 + getTarget() + " " + getProgressUnit() + separatorBetweenTargetAndProgress
                 + getProgress() + " " + getProgressUnit() + getAchieved() + "\n";

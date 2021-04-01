@@ -1,7 +1,9 @@
 package seedu.duke.goal;
 
+import seedu.duke.common.Messages;
 import seedu.duke.record.RecordType;
 
+import java.lang.reflect.Member;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
 
@@ -22,6 +24,7 @@ public abstract class Goal {
     protected String separatorBetweenTypeAndTarget;
     protected String separatorBetweenTargetAndProgress;
     public static final String SEPARATOR = " | ";
+    protected static final String SEPATATOR_TAB = "    ";
 
     /**
      * Initializes the instance with goal type and period type.

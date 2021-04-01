@@ -14,7 +14,8 @@ public class HelpCommand extends Command {
                 + Messages.MESSAGE_SYNTAX_DELETE_COMMAND + "\n\n"
                 + Messages.MESSAGE_SYNTAX_SET_COMMAND + "\n\n"
                 + Messages.MESSAGE_SYNTAX_CHECK_COMMAND + "\n\n"
-                + Messages.MESSAGE_SYNTAX_CANCEL_COMMAND;
+                + Messages.MESSAGE_SYNTAX_CANCEL_COMMAND + "\n\n"
+                + Messages.MESSAGE_SYNTAX_EXIT_COMMAND;
     }
 
     /**

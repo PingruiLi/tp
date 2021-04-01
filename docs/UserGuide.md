@@ -2,7 +2,7 @@
 
 ## Introduction
 
-Healtheir targets people who care about fitness, who exercise regularly (at least 3 times/week) and have diet plans. It is designed for users of age group 18-30.  
+Healthier targets people who care about fitness, who exercise regularly (at least 3 times/week) and have diet plans. It is designed for users of age group 18-30.  
 This app is used via **Command Line Interface (CLI)**. If the user is proficient in using command-line tools & typing, then it could be very efficient to use. This app also provides several shortcut commands for advanced users for further efficient operations.
 
 ---
@@ -17,7 +17,7 @@ This is a cross-platform application, you can run it on any operating system as 
 > To verify if you have **Java 11** installed, simply type command `java --version` in your terminal.
 1. Download the `tp.jar` file from the [latest release](https://github.com/AY2021S2-CS2113-F10-2/tp/releases).
 1. Open a new terminal at the folder where the `Tp.jar` file is located.
-1. Run the applictaion use command `java -jar Tp.jar`
+1. Run the application use command `java -jar Tp.jar`
 1. Refer to the [Features](README.md#features) section below for more info on commands.
 
 ## Features
@@ -38,7 +38,7 @@ This is a cross-platform application, you can run it on any operating system as 
     >
     >    e.g. if the command `help hahahaha` is input, it is equivalent to `help`.
 >
-> * After the appliction starts running, it checks if a `data` folder exists in the same directory where `tp.jar` is located.
+> * After the application starts running, it checks if a `data` folder exists in the same directory where `tp.jar` is located.
     >   If the folder does not exist, the application will create a new folder `data`,
     >   which is used to store the `data.txt` file which contains details of the user's data.
 >
@@ -52,7 +52,7 @@ Format: `help`
 
 Example: `help`
 
-Expected outcome:
+The expected outcome:
 ```
 ```
 
@@ -157,7 +157,7 @@ Index    Date         Activity   Duration
 
 ### Input Diet Data: `add`
 
-Add one exercise activity with the duration and the date
+Add one exercise activity with the duration, and the date
 
 Format: `add  t/D f/FOOD_NAME  w/WEIGHT  [date/DD-MM-YYYY]`
 
@@ -247,10 +247,10 @@ Index    Date         Diet    Weight
 ### Set a daily or weekly goal for exercise: `set`
 Set a daily/weekly exercise goal with a target energy (in calories) to burn.
 
-Format: `set  t/E p/PERIOD_TYPE target/ENERGY`
+Format: `set  t/E p/INTERVAL_TYPE target/ENERGY`
  
 * The tag value should be `E` in the upper case, which specifies that the current goal is for **exercise data**.
-* The period type can be `D`, and `W` corresponding to **daily and weekly**. 
+* The interval type can be `D`, and `W` corresponding to **daily and weekly**. 
 * The default unit of energy is in **kcal**. A **float number** is expected for the energy to burn, other formats are **not acceptable**.
 
 Example of usage:  
@@ -280,11 +280,11 @@ Progress: 0kcal
 ### Set a daily or weekly goal for sleep: `set`
 Set a daily/weekly sleep goal with a target duration (in hours).
 
-Format: `set  t/S p/PERIOD_TYPE target/DURATION`
+Format: `set  t/S p/INTERVAL_TYPE target/DURATION`
  
 * The tag value should be `S` in the upper case, which specifies that the current goal is for **sleep data**.
-* The period type can be `D`, and `W` corresponding to **daily and weekly**. 
-* The default unit of duration is in **hours**. The format of the durtaion should be either `X` or `X.5`, where `X` is an integer between `0` and `23` and `0.5` means half an hour. Other formats are **not acceptable**.
+* The interval type can be `D`, and `W` corresponding to **daily and weekly**. 
+* The default unit of duration is in **hours**. The format of the duration should be either `X` or `X.5`, where `X` is an integer between `0` and `23` and `0.5` means half an hour. Other formats are **not acceptable**.
 
 Example of usage:  
 `set t/S p/D target/8.5`
@@ -313,10 +313,10 @@ Progress: 0hours
 ### Set a daily or weekly goal for diet: `set`
 Set a daily/weekly diet goal with a target energy (in calories) to take in.
 
-Format: `set  t/D p/PERIOD_TYPE target/ENERGY`
+Format: `set  t/D p/INTERVAL_TYPE target/ENERGY`
  
 * The tag value should be `D` in the upper case, which specifies that the current goal is for **diet data**.
-* The period type can be `D`, and `W` corresponding to **daily and weekly**. 
+* The interval type can be `D`, and `W` corresponding to **daily and weekly**. 
 * The default unit of energy is in **kcal**. A **float number** is expected for the energy take in, other formats are **not acceptable**.
 
 Example of usage:  
@@ -346,10 +346,10 @@ Progress: 0kcal
 ### Set a daily or weekly goal for body weight: `set`
 Set a daily/weekly body weight goal with a target weight (in kg).
 
-Format: `set  t/W p/PERIOD_TYPE target/WEIGHT`
+Format: `set  t/W p/INTERVAL_TYPE target/WEIGHT`
  
 * The tag value should be `W` in the upper case, which specifies that the current goal is for **body weight data**.
-* The period type can be `D`, and `W` corresponding to **daily and weekly**. 
+* The interval type can be `D`, and `W` corresponding to **daily and weekly**. 
 * The default unit of weight is in **kg**. A **float number** is expected for the weight, other formats are **not acceptable**.
 
 Example of usage:  
@@ -379,10 +379,10 @@ Progress: 61kg
 ### Check the progress of goals: `check`
 Check the current progress of goals set by the user.
 
-Format: `check  t/TAG [p/PERIOD_TYPE]`
+Format: `check  t/TAG [p/INTERVAL_TYPE]`
  
 * The tag value should only be `E`, `S`, `D`, `W`. It specifies the kind of goal (exercise, sleep, diet and body weight) to check.
-* The period type can be `D`, and `W`corresponding to **daily and weekly**. It is optional.
+* The interval type can be `D`, and `W`corresponding to **daily and weekly**. It is optional.
 
 Example of usage:  
 `check t/E`

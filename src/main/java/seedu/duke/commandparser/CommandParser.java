@@ -140,14 +140,22 @@ public class CommandParser {
                 return new InvalidCommand(SET);
             }
 
-            String rawPeriodType = rawParams[1].trim().substring(2);
-            String targetStr = rawParams[2].trim().substring(7);
+            String rawPeriodType = rawParams[1];
+            if (!rawPeriodType.contains("p/")) {
+                return new InvalidCommand(SET);
+            }
+            rawPeriodType = rawPeriodType.trim().substring(2);
+            String targetStr = rawParams[2];
+            if (!targetStr.contains("target/")) {
+                return new InvalidCommand(SET);
+            }
+            targetStr = targetStr.trim().substring(7);
 
             double target = Double.parseDouble(targetStr);
 
             PeriodType periodType = PeriodType.parsePeriodType(rawPeriodType);
             if (periodType == PeriodType.INVALID) {
-                return new InvalidCommand(Messages.MESSAGE_INVALID_PERIOD_TYPE);
+                return new InvalidCommand(Messages.MESSAGE_INVALID_INTERVAL_TYPE);
             }
             params.put("periodType", periodType.toString());
             params.put("target", String.valueOf(target));
@@ -163,6 +171,8 @@ public class CommandParser {
             default:
                 return new InvalidCommand(Messages.MESSAGE_DOUBLE_FORMAT_ERROR);
             }
+        } catch (Exception e) {
+            return new InvalidCommand(SET);
         }
     }
 
@@ -181,10 +191,14 @@ public class CommandParser {
             }
 
             if (rawParams.length == 2) {
-                String rawPeriodType = rawParams[1].trim().substring(2);
+                String rawPeriodType = rawParams[1];
+                if (!rawPeriodType.contains("p/")) {
+                    return new InvalidCommand(CHECK);
+                }
+                rawPeriodType = rawPeriodType.trim().substring(2);
                 PeriodType periodType = PeriodType.parsePeriodType(rawPeriodType);
                 if (periodType == PeriodType.INVALID) {
-                    return new InvalidCommand(Messages.MESSAGE_INVALID_PERIOD_TYPE);
+                    return new InvalidCommand(Messages.MESSAGE_INVALID_INTERVAL_TYPE);
                 }
                 params.put("periodType", periodType.toString());
             } else {
@@ -210,13 +224,20 @@ public class CommandParser {
                 return new InvalidCommand(CANCEL);
             }
 
-            String rawIndex = rawParams[1].trim().substring(2);
+            String rawIndex = rawParams[1];
+            if (!rawIndex.contains("i/")) {
+                return new InvalidCommand(CANCEL);
+            }
+
+            rawIndex = rawIndex.trim().substring(2);
 
             int index = Integer.parseInt(rawIndex);
             params.put("index", String.valueOf(index));
             return new CancelCommand(recordType, params);
         } catch (NumberFormatException e) {
             return new InvalidCommand(Messages.MESSAGE_INDEX_NUMBER_FORMAT_EXCEPTION);
+        } catch (Exception e) {
+            return new InvalidCommand(CANCEL);
         }
     }
 

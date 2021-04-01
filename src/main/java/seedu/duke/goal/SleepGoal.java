@@ -2,6 +2,7 @@ package seedu.duke.goal;
 
 import seedu.duke.record.RecordType;
 
+import java.security.SecurityPermission;
 import java.time.LocalDate;
 
 public class SleepGoal extends Goal {
@@ -51,7 +52,7 @@ public class SleepGoal extends Goal {
 
     @Override
     public String getGoalData() {
-        return "\t" + getDaySet().format(DATE_FORMATTER) + "\t\t"
+        return SEPATATOR_TAB + SEPATATOR_TAB + getDaySet().format(DATE_FORMATTER) + SEPATATOR_TAB + SEPATATOR_TAB
                 + getPeriodType().toString().toLowerCase() + separatorBetweenTypeAndTarget
                 + getTarget() + " " + getProgressUnit() + separatorBetweenTargetAndProgress
                 + getProgress() + " " + getProgressUnit() + getAchieved() + "\n";

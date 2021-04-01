@@ -4,6 +4,7 @@ package seedu.duke.common;
  * Container for commonly used messages.
  */
 public class Messages {
+    //public static final String SPACING = "        ";
     public static final String MESSAGE_VERSION = "V2.0";
     public static final String MESSAGE_FEATURES = "You can use the app by using command ADD, VIEW, and DELETE.";
     public static final String MESSAGE_WELCOME = "Healthier - your powerful personal fitness app.\n"
@@ -30,7 +31,8 @@ public class Messages {
             + "You have achieved all weekly goals for this week!";
     public static final String MESSAGE_VIEW_TITLE = "Displaying all eligible %s records:\n";
     public static final String MESSAGE_CHECK_TITLE = "Checking the progress of eligible %s goals:\n";
-    public static final String MESSAGE_CHECK_HEADER = "Index\t\tDate Set\t\tGoal Type\t\tTarget\t\t\tProgress\n";
+    public static final String MESSAGE_CHECK_HEADER = "Index    Date Set          Goal Type       "
+            + "Target          Progress\n";
     public static final String MESSAGE_VIEW_HEADER_EXERCISE = "Index        Date          Activity        "
             + "Duration        Calories\n";
     public static final String MESSAGE_VIEW_HEADER_DIET = "Index        Date          Food Category       Weight"
@@ -65,8 +67,8 @@ public class Messages {
     public static final String MESSAGE_SYSTEM_ERROR = "There is something wrong within the system.";
     public static final String MESSAGE_DOUBLE_FORMAT_ERROR = "A double value is expected for the number field. "
             + "Please verify your input and try again.";
-    public static final String MESSAGE_INVALID_PERIOD_TYPE = "The period type you entered is invalid.\n"
-            + "The period type can only be 'D' or 'W'. Please try again.";
+    public static final String MESSAGE_INVALID_INTERVAL_TYPE = "The interval type you entered is invalid.\n"
+            + "The interval type can only be 'D' or 'W'. Please try again.";
     public static final String MESSAGE_INVALID_DATE_FORMAT = "The date format is incorrect or the date is invalid. "
             + "Please try again.\n";
     public static final String MESSAGE_INVALID_SLEEP_HOUR = "The duration you entered is invalid.\n"
@@ -119,18 +121,20 @@ public class Messages {
             + "3. Delete sleep records\n\tdelete t/S i/index\n"
             + "4. Delete body weight records\n\tdelete t/W i/index";
     public static final String MESSAGE_SYNTAX_SET_COMMAND = "The syntax for set command is:\n"
-            + "1. Set exercise goals\n\tset t/E p/PERIOD_TYPE target/TARGET_ENERGY\n"
-            + "2. Set diet goals\n\tset t/D p/PERIOD_TYPE target/TARGET_ENERGY\n"
-            + "3. Set sleep goals\n\tset t/S p/PERIOD_TYPE target/TARGET_DURATION\n"
-            + "4. Set body weight goals\n\tset t/W p/PERIOD_TYPE target/TARGET_WEIGHT";
+            + "1. Set exercise goals\n\tset t/E p/INTERVAL_TYPE target/TARGET_ENERGY\n"
+            + "2. Set diet goals\n\tset t/D p/INTERVAL_TYPE target/TARGET_ENERGY\n"
+            + "3. Set sleep goals\n\tset t/S p/INTERVAL_TYPE target/TARGET_DURATION\n"
+            + "4. Set body weight goals\n\tset t/W p/INTERVAL_TYPE target/TARGET_WEIGHT";
     public static final String MESSAGE_SYNTAX_CHECK_COMMAND = "The syntax for check command is:\n"
-            + "1. check exercise goals\n\tcheck t/E [p/PERIOD_TYPE]\n"
-            + "2. check diet goals\n\tcheck t/D [p/PERIOD_TYPE]\n"
-            + "3. check sleep goals\n\tcheck t/S [p/PERIOD_TYPE]\n"
-            + "4. check body weight goals\n\tcheck t/W [p/PERIOD_TYPE]";
+            + "1. check exercise goals\n\tcheck t/E [p/INTERVAL_TYPE]\n"
+            + "2. check diet goals\n\tcheck t/D [p/INTERVAL_TYPE]\n"
+            + "3. check sleep goals\n\tcheck t/S [p/INTERVAL_TYPE]\n"
+            + "4. check body weight goals\n\tcheck t/W [p/INTERVAL_TYPE]";
     public static final String MESSAGE_SYNTAX_CANCEL_COMMAND = "The syntax for cancel command is:\n"
             + "1. cancel exercise goals\n\tcancel t/E i/INDEX\n"
             + "2. cancel diet goals\n\tcancel t/D i/INDEX\n"
             + "3. cancel sleep goals\n\tcancel t/S i/INDEX\n"
             + "4. cancel body weight goals\n\tcancel t/W i/INDEX";
+    public static final String MESSAGE_SYNTAX_EXIT_COMMAND = "The syntax for exit command is:\n"
+            + "\texit";
 }

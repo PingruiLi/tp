@@ -71,12 +71,12 @@ public class BodyWeightGoal extends Goal {
     @Override
     public String getGoalData() {
         if (progress == -1) {
-            return "\t" + getDaySet().format(DATE_FORMATTER) + "\t\t"
+            return SEPATATOR_TAB + SEPATATOR_TAB + getDaySet().format(DATE_FORMATTER) + SEPATATOR_TAB + SEPATATOR_TAB
                     + getPeriodType().toString().toLowerCase() + getAchieved() + separatorBetweenTypeAndTarget
                     + getTarget() + " " + getProgressUnit() + separatorBetweenTargetAndProgress
                     + MESSAGE_NO_BODY_WEIGHT_PROGRESS + getAchieved() + "\n";
         } else {
-            return "\t" + getDaySet().format(DATE_FORMATTER) + "\t\t"
+            return SEPATATOR_TAB + SEPATATOR_TAB + getDaySet().format(DATE_FORMATTER) + SEPATATOR_TAB + SEPATATOR_TAB
                     + getPeriodType().toString().toLowerCase() + separatorBetweenTypeAndTarget
                     + getTarget() + " " + getProgressUnit() + separatorBetweenTargetAndProgress
                     + getProgress() + " " + getProgressUnit() + getAchieved() + "\n";
